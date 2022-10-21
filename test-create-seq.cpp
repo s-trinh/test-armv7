@@ -5,7 +5,6 @@
 #include <visp3/core/vpIoTools.h>
 #include <visp3/io/vpVideoWriter.h>
 
-
 template <class Type>
 bool test_createSequence(vpImage<Type> &I, const std::string &videoname, unsigned int first_frame, int frame_step,
                          unsigned int nframes)
