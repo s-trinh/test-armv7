@@ -30,14 +30,20 @@ std::vector<std::string> getDirFiles(const std::string &pathname)
   return files;
 }
 
-int main()
+int main(int argc, char **argv)
 {
+  if (argc != 2) {
+    std::cout << "Folder not given as argument" << std::endl;
+    return EXIT_FAILURE;
+  }
+
   std::vector<std::string> files;
-  files = getDirFiles("/tmp/unknown/video");
+  files = getDirFiles(argv[1]);
   std::cout << "The folder contains:" << std::endl;
   for (int i = 0; i < files.size(); i++) {
     std::cout << files[i] << std::endl;
   }
+
   std::cout << "The end" << std::endl;
   return EXIT_SUCCESS;
 }
